@@ -2,7 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 import 'dart:io';
-
+import 'color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meta/meta.dart';
@@ -72,7 +72,7 @@ class ZefyrThemeData {
       fontSize: 16.0,
       height: 1.25,
       fontWeight: FontWeight.normal,
-      color: Colors.grey.shade800,
+      color: CtColors.primary, //Colors.grey.shade800,
     );
     final padding = const EdgeInsets.only(bottom: 16.0);
     final boldStyle = new TextStyle(fontWeight: FontWeight.bold);
@@ -88,8 +88,8 @@ class ZefyrThemeData {
           new StyleTheme(textStyle: paragraphStyle, padding: padding),
       headingTheme: new HeadingTheme.fallback(),
       blockTheme: new BlockTheme.fallback(),
-      selectionColor: Colors.lightBlueAccent.shade100,
-      cursorColor: Colors.black,
+      selectionColor: CtColors.primary,
+      cursorColor: CtColors.primary,
       indentSize: 16.0,
       toolbarTheme: new ZefyrToolbarTheme.fallback(context),
     );
@@ -174,7 +174,7 @@ class HeadingTheme {
       level1: StyleTheme(
         textStyle: TextStyle(
           fontSize: 30.0,
-          color: Colors.grey.shade800,
+          color: CtColors.primary,
           height: 1.25,
           fontWeight: FontWeight.w600,
         ),
@@ -183,7 +183,7 @@ class HeadingTheme {
       level2: StyleTheme(
         textStyle: TextStyle(
           fontSize: 24.0,
-          color: Colors.grey.shade800,
+          color: CtColors.primary,
           height: 1.25,
           fontWeight: FontWeight.w600,
         ),
@@ -192,7 +192,7 @@ class HeadingTheme {
       level3: StyleTheme(
         textStyle: TextStyle(
           fontSize: 20.0,
-          color: Colors.grey.shade800,
+          color: CtColors.primary,
           height: 1.25,
           fontWeight: FontWeight.w600,
         ),
@@ -230,12 +230,12 @@ class BlockTheme {
       bulletList: new StyleTheme(padding: padding),
       numberList: new StyleTheme(padding: padding),
       quote: new StyleTheme(
-        textStyle: new TextStyle(color: Colors.grey.shade700),
+        textStyle: new TextStyle(color: CtColors.primary),
         padding: padding,
       ),
       code: new StyleTheme(
         textStyle: new TextStyle(
-          color: Colors.blueGrey.shade800,
+          color: CtColors.primary,
           fontFamily: Platform.isIOS ? 'Menlo' : 'Roboto Mono',
           fontSize: 14.0,
           height: 1.25,
@@ -282,10 +282,10 @@ class ZefyrToolbarTheme {
   factory ZefyrToolbarTheme.fallback(BuildContext context) {
     final theme = Theme.of(context);
     return ZefyrToolbarTheme._(
-      color: theme.primaryColorLight,
-      toggleColor: theme.primaryColor,
-      iconColor: theme.primaryIconTheme.color,
-      disabledIconColor: theme.primaryColor,
+      color: CtColors.gray5,
+      toggleColor: CtColors.gray6,
+      iconColor: CtColors.primary,
+      disabledIconColor: CtColors.primary,
     );
   }
 
